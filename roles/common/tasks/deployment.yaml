@@ -25,14 +25,14 @@
   tags:
   - deployment
   ansible.builtin.get_url:
-    url: https://roboshop-builds.s3.amazonaws.com/{{component}}.zip
+    url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
     dest: /tmp
 
 - name: Extracting Catalogue Application
   tags:
   - deployment
   ansible.builtin.unarchive: 
-    src: /tmp/{{component}}.zip
+    src: "/tmp/{{component}}.zip"
     dest: /app
     remote_src: yes #if file is alredy in remote source
 
@@ -43,9 +43,9 @@
   args: #args can be used to change directory
     chdir: /app
 
-- name: restart {{component}}
+- name: restart "{{component}}"
   tags:
   - deployment
   ansible.builtin.service:
-    name: {{component}}
+    name: "{{component}}"
     state: restart

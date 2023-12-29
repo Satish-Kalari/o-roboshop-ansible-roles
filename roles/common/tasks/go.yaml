@@ -3,10 +3,10 @@
     name: golang
     state: present
 
-- name: built go applaication
+- name: built go application
   ansible.builtin.command: "{{item}}"
   loop:
-  - go mod inti dispatch
+  - go mod init dispatch
   - go get
   - go build
   args:

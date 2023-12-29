@@ -1,5 +1,5 @@
-- name: Install Python 3.6
-  ansible.builtin.package:
+- name: Install Python package
+  ansible.builtin.dnf:
     name: "{{item}}"
     state: present
 loop:

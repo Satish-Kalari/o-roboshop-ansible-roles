@@ -9,6 +9,6 @@
     tasks_from: phyton
 
 - name: system start
-  ansible.builtin.import_role:
+  ansible.builtin.import_roles:
     name: common
     tasks_from: systemd 
